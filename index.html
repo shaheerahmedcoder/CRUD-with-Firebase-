@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Input Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-image:  linear-gradient(to right, #228dff, #9704cc);
+    }
+    #userform{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      background: linear-gradient(to bottom, #ffffff, #8c8c8c);
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-family: Segoe UI Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    input[type="text"],
+    textarea {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      background-image: linear-gradient(to right,rgb(255, 255, 255),rgb(255, 255, 255));
+   
+      color: rgb(0, 0, 0);
+  
+    }
+    /* .form:focus{
+      background-image: linear-gradient(white,black);
+    } */
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+      background: linear-gradient(to right, #ffffff, #414141);
+      border: none;
+      border-radius: 5px;
+      cursor:grab;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #017cff, #c013ff);
+      transform: scale(1.05);
+    }
+
+    .container {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 800px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: linear-gradient(to right, #ffffff, #414141);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      border:1px solid black;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    table th, table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* table th {
+      background-color: #007bff;
+      color: white;
+      
+    } */
+
+    table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    table tr:hover {
+      background: linear-gradient(to right, #000000, #535353);
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 15px;
+      }
+
+      label {
+        font-size: 14px;
+      }
+
+      input[type="text"],
+      textarea {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+
+      table th, table td {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+    .updatedbtn{
+       display:none;
+    }
+    .show{
+       display:block;
+    }
+    .hide{
+      display:none;
+    }
+    .head{
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: rgb(0, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <h1 class="head">TODO APP</h1>
+  <div id="container">
+
+  </div>
+  <form id="userForm">
+    <label for="title">Todo Title:</label>
+    <input type="text" id="title" name="title" placeholder="Enter todo title here" required>
+    
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" placeholder="Enter todo description here.." required></textarea>
+    
+    <button type="submit" class="sumbit">Submit</button>
+    <button type="submit" class="updatedbtn">Update the Todo</button>
+  </form>
+<br><br>
+  <div class="container">
+    <table>
+      <th>Todo Title</th>
+      <th>Description</th>
+    </table>
+  </div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
